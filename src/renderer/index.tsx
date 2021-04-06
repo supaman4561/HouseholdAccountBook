@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Paper, Typography, makeStyles, Theme } from '@material-ui/core';
+import { Paper, Typography, makeStyles, Theme, Modal } from '@material-ui/core';
+import TransitionModal from './transition_modal'
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     padding: theme.spacing(3)
-  }
+  },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 }));
 
 interface HeadProps {
@@ -26,6 +32,7 @@ const App: React.FC = () => {
   return (
     <Paper className={classes.root}>
       <Head headline="Hello world" />
+      <TransitionModal />
     </Paper>
   );
 };
